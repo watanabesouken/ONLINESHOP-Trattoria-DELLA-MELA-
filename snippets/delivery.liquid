@@ -1,0 +1,51 @@
+
+<div class="delivery-style">
+  <p>
+    <label for="date">配送日指定:</label>
+    <input class="presentradio" id="date" type="text" name="attributes[配送日]"  value="{{ cart.attributes.date }}" required ="required">
+    <span style="display:block" class="instructions">ご注文より配達まで5営業日いただいております。<br>
+
+余裕を持ってご注文ください。(例：注文5月1日→配達5月4日)<br>
+
+※月曜日は店舗休業日ですのでご注意ください。</span>
+  </p>
+
+  <p>
+    <label for="time">配送時間指定:</label>
+      <select  name="attributes[配送時間]" required ="required">
+        <option value="" ></option>
+        <option value="午前">午前</option>
+        <option value="14時-16時">14時-16時</option>
+        <option value="16時-18時">16時-18時</option>
+        <option value="18時-20時">18時-20時</option>
+        <option value="19時-21時">19時-21時</option>
+    　</select>
+
+  </p>
+</div>
+
+  <script>
+    window.onload = function() {
+      if (window.jQuery) {
+        let $ = window.jQuery;
+
+        $(function() {
+          $("#date").datepicker({
+            minDate: +4,
+            maxDate: '+2M'
+          });
+        });
+      }
+    }
+  </script>
+
+  <style>
+    .delivery-style {
+    width: 100%;
+    }
+
+    .delivery-style p {
+    width: 100%;
+    max-width: 600px;
+    }
+  </style>
